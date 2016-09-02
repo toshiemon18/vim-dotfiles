@@ -70,28 +70,28 @@ augroup END
 "   neosnippetとか
 " =================
 " " neosnippet、neosnippet-snippet、neocomplete、neocomplcache
-" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k>     <Plug>(neosnippet_expand_target)
-" " Using pocke/dicts
-" let g:neocomplete#sources#dictionary#dictionaries = {
-" \   'ruby': $HOME . '/dicts/ruby.dict',
-" \ }
-" " SuperTab like snippets behavior.
-" imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)"
-" \: pumvisible() ? "\<C-n>" : "\<TAB>"
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)"
-" \: "\<TAB>"
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+" Using pocke/dicts
+let g:neocomplete#sources#dictionary#dictionaries = {
+\   'ruby': $HOME . '/dicts/ruby.dict',
+\ }
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 " if dein#is_installed('neocomplete')
-"     let g:neocomplete#enable_at_startup = 1
-"     let g:neocomplete#enable_ignore_case = 1
-"     let g:neocomplete#enable_smart_case = 1
-"     if !exists('g:neocomplete#keyword_patterns')
-"         let g:neocomplete#keyword_patterns = {}
-"     endif
-"     let g:neocomplete#keyword_patterns._ = '\h\w*'
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_ignore_case = 1
+    let g:neocomplete#enable_smart_case = 1
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns._ = '\h\w*'
 " elseif dein#is_installed('neocomplcache')
 "     let g:neocomplcache_enable_at_startup = 1
 "     let g:neocomplcache_enable_ignore_case = 1
@@ -103,7 +103,7 @@ augroup END
 "     let g:neocomplcache_enable_camel_case_completion = 1
 "     let g:neocomplcache_enable_underbar_completion = 1
 " endif
-" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-" inoremap <expr><S-TAB> pumvisible() ? "<C-p>" : "\<S-TAB>"
-" hi WarningMsg guifg=bg
-"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "<C-p>" : "\<S-TAB>"
+hi WarningMsg guifg=bg
+
