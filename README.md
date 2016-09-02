@@ -1,5 +1,8 @@
 # vim-dotfiles
 
+NeoBundleからdein.vimに移行した
+
+
 参考にしたサイト
  - [NeoVim、そしてdein.vimへ](http://qiita.com/okamos/items/2259d5c770d51b88d75b)
  - [dein.vimをインストールする](http://qiita.com/hanaclover/items/f45250b55e2298c4ac5a)
