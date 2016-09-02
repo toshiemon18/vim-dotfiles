@@ -60,9 +60,9 @@ repo = 'Shougo/neosnippet-snippets'
 # 補完入力をサポート
 # neocomplete/neocomplcache
 [[plugins]]
-repo = 'Shougo/neocomplete'
-if = 'has("lua")'
-on_i = 1
+repo = 'Shougo/neocomplete.vim'
+# if = 'has("lua")'
+# on_i = 1
 
 # ステータスラインを良い感じするやつ
 # lightline.vim
