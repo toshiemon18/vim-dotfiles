@@ -107,3 +107,10 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "<C-p>" : "\<S-TAB>"
 hi WarningMsg guifg=bg
 
+" =================
+"  vim-jsx
+" =================
+" .jsxだけでなく.jsでも有効にする
+let g:jsx_ext_required = 0
+
+
