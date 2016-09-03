@@ -126,6 +126,11 @@ repo = 'pangloss/vim-javascript'
 [[plugins]]
 repo = 'jelera/vim-javascript-syntax'
 
+# JSXに対応する
+# vim-jsx
+[[plugins]]
+repo = 'mxw/vim-jsx'
+
 # CoffeeScriptを書くためのサムシング
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
