@@ -111,6 +111,6 @@ hi WarningMsg guifg=bg
 "  vim-jsx
 " =================
 " .jsxだけでなく.jsでも有効にする
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
 
