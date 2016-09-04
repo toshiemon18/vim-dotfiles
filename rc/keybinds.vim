@@ -89,3 +89,8 @@ inoremap <C-s> :w<CR>
 nnoremap <ESC><ESC> :nohlsearch<CR>
 " 新規バッファを開く
 map vn :vnew<CR>
+" インサートモードでもhjkl
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-h> <Left>
+imap <C-l> <Right>
