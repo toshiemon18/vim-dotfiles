@@ -60,9 +60,8 @@ repo = 'Shougo/neosnippet-snippets'
 # 補完入力をサポート
 # neocomplete/neocomplcache
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-# if = 'has("lua")'
-# on_i = 1
+repo = 'Shougo/neocomplcache.vim'
+
 
 # ステータスラインを良い感じするやつ
 # lightline.vim
@@ -126,10 +125,13 @@ repo = 'pangloss/vim-javascript'
 [[plugins]]
 repo = 'jelera/vim-javascript-syntax'
 
+[[plugins]]
+repo = 'moll/vim-node'
+
 # JSXに対応する
 # vim-jsx
-[[plugins]]
-repo = 'mxw/vim-jsx'
+# [[plugins]]
+# repo = 'mxw/vim-jsx'
 
 # CoffeeScriptを書くためのサムシング
 [[plugins]]
@@ -153,9 +155,6 @@ repo = 'mattn/emmet-vim'
 # vim-css3-syntax
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
-
-[[plugins]]
-repo = 'victorvoid/vim-frontend'
 
 # =================
 #   Markdown
