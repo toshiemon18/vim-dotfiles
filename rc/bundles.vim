@@ -45,26 +45,23 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 " =================
 "   emmet.vim
 " =================
-let g:user_emmet_mode = 'iv'
-let g:user_emmet_leader_key = '<C-Y>'
+let g:user_emmet_mode = 'a'
+let g:user_emmet_leader_key = '<C-y>'
 let g:user_emmet_complete_tag = 1
 let g:user_emmet_settings = {
             \   'lang': 'ja',
+            \   'indentation': '  ',
             \   'html': {
-            \          'filters': 'html',
+            \       'filters': 'html',
             \   },
             \   'css': {
-            \        'filters': 'fc',
+            \       'filters': 'fc',
             \   },
             \   'php': {
             \       'extends': 'html',
             \       'filters': 'html',
             \   },
             \}
-augroup EmmitVim
-    autocmd!
-    autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
-augroup END
 
 " =================
 "   neosnippetとか
@@ -108,9 +105,9 @@ inoremap <expr><S-TAB> pumvisible() ? "<C-p>" : "\<S-TAB>"
 hi WarningMsg guifg=bg
 
 " =================
-"  vim-jsx
+"  vim-javascript
 " =================
-" .jsxだけでなく.jsでも有効にする
-" let g:jsx_ext_required = 0
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
 
 
