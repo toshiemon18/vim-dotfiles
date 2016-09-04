@@ -19,6 +19,11 @@ autocmd FileType slim setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 autocmd FileType ruby setl iskeyword+=?
 
 " =================
+"    JavaScript
+" =================
+autocmd filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+
+" =================
 "    Coffee Script
 " =================
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
