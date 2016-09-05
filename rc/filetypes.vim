@@ -21,7 +21,8 @@ autocmd FileType ruby setl iskeyword+=?
 " =================
 "    JavaScript
 " =================
-autocmd filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd filetype javascript setl nocindent autoindent smartindent
+autocmd filetype javascript setl shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " =================
 "    Coffee Script
