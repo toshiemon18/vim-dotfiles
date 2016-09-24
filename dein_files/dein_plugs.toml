@@ -114,6 +114,17 @@ repo = 'thoughtbot/vim-rspec'
 repo = 'slim-template/vim-slim'
 
 # =================
+#   Elixir
+# =================
+# シンタックス、ハイライト等
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+
+# Phoenix対応
+[[plugins]]
+repo = 'avdgaag/vim-phoenix'
+
+# =================
 #   JavaScript
 #   CoffeeScript
 # =================
