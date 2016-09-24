@@ -13,7 +13,9 @@ augroup RSpec
     autocmd!
     autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
+autocmd FileType yaml setl nocindent autoindent smartindent
 autocmd FileType yaml setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+autocmd FileType slim setl nocindent autoindent smartindent
 autocmd FileType slim setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 " RubyでBool値返すメソッドをちゃんと判断させる
 autocmd FileType ruby setl iskeyword+=?

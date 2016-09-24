@@ -67,7 +67,7 @@ set guifontwide=Ricty\ 14
 "  エディタの見た目
 " =================
 colorscheme molokai
-syntax on
+syntax enable
 let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
