@@ -21,6 +21,12 @@ autocmd FileType slim setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 autocmd FileType ruby setl iskeyword+=?
 
 " =================
+"    Elixir
+" =================
+autocmd FileType elixir setl nocindent autoindent smartindent
+autocmd FileType elixir setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+" =================
 "    JavaScript
 " =================
 autocmd filetype javascript setl nocindent autoindent smartindent
