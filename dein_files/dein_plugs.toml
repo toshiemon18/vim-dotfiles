@@ -168,6 +168,15 @@ repo = 'mattn/emmet-vim'
 repo = 'hail2u/vim-css3-syntax'
 
 # =================
+#   R
+# =================
+# vim-R-Plugin
+# vimをR Studioっぽくするやつ
+[[plugins]]
+repo = 'vim-scripts/Vim-R-plugin'
+
+
+# =================
 #   Markdown
 # =================
 # Markdownのためのプラグイン
