@@ -23,6 +23,9 @@ autocmd FileType ruby setl iskeyword+=?
 " =================
 "    Elixir
 " =================
+au bufread,bufnewfile *.ex set filetype=elixir
+au bufread,bufnewfile *.exs set filetype=elixir
+au bufread,bufnewfile *.eex set filetype=elixir
 autocmd FileType elixir setl nocindent autoindent smartindent
 autocmd FileType elixir setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
@@ -57,5 +60,5 @@ au BufRead,BufNewFile *.md set filetype=markdown
 "    HTML/XML
 " =================
 " 閉じタグ(</)が入力されたら自動で保管する
-:let g:closetag_html_style=1
-source ~/.vim/bundle/closetag.vim
+" :let g:closetag_html_style=1
+" source ~/.vim/bundle/closetag.vim
