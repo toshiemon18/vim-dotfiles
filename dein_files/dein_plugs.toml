@@ -61,7 +61,8 @@ repo = 'Shougo/neosnippet-snippets'
 # neocomplete/neocomplcache
 [[plugins]]
 repo = 'Shougo/neocomplcache.vim'
-
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
 
 # ステータスラインを良い感じするやつ
 # lightline.vim
@@ -75,13 +76,24 @@ repo = 'kana/vim-arpeggio'
 
 # quickrun.vim
 [[plugins]]
-repo = 'vim-quickrun'
 repo = 'thinca/vim-quickrun'
+
+# vim-ref.vim
+[[plugins]]
+repo = 'thinca/vim-ref'
 
 # text-objectを強化するやつ
 # vim-surround
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+# vim-watchdog
+[[plugins]]
+repo = 'osyo-manga/shabadou.vim'
+
+# shabadou.vim
+[[plugins]]
+repo = 'osyo-manga/shabadou.vim'
 
 # =================
 #   Ruby関連
@@ -123,6 +135,10 @@ repo = 'elixir-lang/vim-elixir'
 # Phoenix対応
 [[plugins]]
 repo = 'avdgaag/vim-phoenix'
+
+# vivi
+[[plugins]]
+repo = 'liquidz/vivi.vim'
 
 # =================
 #   JavaScript
