@@ -136,6 +136,14 @@ repo = 'elixir-lang/vim-elixir'
 [[plugins]]
 repo = 'avdgaag/vim-phoenix'
 
+# extest
+[[plugins]]
+repo = 'BjRo/vim-extest'
+
+# mattreduce/vim-mix
+[[plugins]]
+repo = 'mattreduce/vim-mix'
+
 # vivi
 [[plugins]]
 repo = 'liquidz/vivi.vim'
