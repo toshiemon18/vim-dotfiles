@@ -144,10 +144,6 @@ repo = 'BjRo/vim-extest'
 [[plugins]]
 repo = 'mattreduce/vim-mix'
 
-# vivi
-[[plugins]]
-repo = 'liquidz/vivi.vim'
-
 # =================
 #   JavaScript
 #   CoffeeScript
