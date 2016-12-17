@@ -61,8 +61,8 @@ repo = 'Shougo/neosnippet-snippets'
 # neocomplete/neocomplcache
 [[plugins]]
 repo = 'Shougo/neocomplcache.vim'
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
+# [[plugins]]
+# repo = 'Shougo/neocomplete.vim'
 
 # ステータスラインを良い感じするやつ
 # lightline.vim
