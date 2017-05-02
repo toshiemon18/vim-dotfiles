@@ -44,6 +44,8 @@ set modifiable
 set write
 set undodir=$HOME/.vim/undodir
 set tw=0
+set wildmenu
+set wildmode=full
 autocmd BufWritePre * :%s/\s\+$//ge " 保存時行末spaceを自動削除
 
 " マウスの動作設定
