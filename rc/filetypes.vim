@@ -57,6 +57,12 @@ set autoindent smartindent expandtab tabstop=4 softtabstop=4 shiftwidth=4
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " =================
+"    Python
+" =================
+autocmd FileType python setl nocindent autoindent smartindent
+autocmd FileType python setl shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+
+" =================
 "    HTML/XML
 " =================
 " 閉じタグ(</)が入力されたら自動で保管する
