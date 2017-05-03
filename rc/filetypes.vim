@@ -55,6 +55,7 @@ set autoindent smartindent expandtab tabstop=4 softtabstop=4 shiftwidth=4
 "    Markdown
 " =================
 au BufRead,BufNewFile *.md set filetype=markdown
+let g:vim_markdown_folding_disabled=1
 
 " =================
 "    Python
