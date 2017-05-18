@@ -59,8 +59,8 @@ repo = 'Shougo/neosnippet-snippets'
 
 # 補完入力をサポート
 # neocomplete/neocomplcache
-[[plugins]]
-repo = 'Shougo/neocomplcache.vim'
+# [[plugins]]
+# repo = 'Shougo/neocomplcache.vim'
 # [[plugins]]
 # repo = 'Shougo/neocomplete.vim'
 
