@@ -66,6 +66,58 @@ let g:user_emmet_settings = {
 " =================
 "  neocomplete/neosnippet
 " =================
+" 起動時にneocompleteを有効化
+let g:neocomplete#enable_at_startup = 1
+" 大文字が入力されるまで大/小文字の区別を無視
+let g:neocomplete#enable_smart_case = 1
+" '_'区切りの保管を有効にする
+let g:neocomplete#enable_underbar_completion = 1
+let g:neocomplete#enable_camel_case_completion = 1
+" ポップアップ表示される候補件数 : 20
+let g:neocomplete#max_list = 20
+" シンタックスをキャッシュする際の文字列の最小の長さ : 3
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+" 保管を表示する際の文字列の最小の長さ
+let g:neocomplete#auto_completion_start_length = 2
+" preview windowを閉じない
+let g:neocomplete#enable_auto_close_preview = 0
+" AutoCmd InsertLeave * silent! pclose!
+let g:neocomplete#max_keyword_width = 10000
+
+if !exists('g:neocomplete#delimiter_patterns')
+    let g:neocomplete#delimiter_patterns= {}
+endif
+let g:neocomplete#delimiter_patterns.ruby = ['::']
+
+if !exists('g:neocomplete#same_filetypes')
+    let g:neocomplete#same_filetypes = {}
+endif
+let g:neocomplete#same_filetypes.ruby = 'eruby'
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+
+let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+let g:neocomplete#force_omni_input_patterns.typescript = '[^. \t]\.\%(\h\w*\)\?' " Same as JavaScript
+let g:neocomplete#force_omni_input_patterns.go = '[^. \t]\.\%(\h\w*\)\?'         " Same as JavaScript
+
+let s:neco_dicts_dir = $HOME . '/vim-dotfiles/dicts'
+if isdirectory(s:neco_dicts_dir)
+    let g:neocomplete#sources#dictionary#dictionaries = {
+    \   'ruby': s:neco_dicts_dir . '/ruby.dict',
+    \   'javascript': s:neco_dicts_dir . '/jquery.dict',
+    \ }
+endif
+let g:neocomplete#data_directory = $HOME . '/.vim/cache/neocomplete'
+
+autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
+autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType ruby setl omnifunc=rubycomplete#Complete
+
+call neocomplete#custom#source('look', 'min_pattern_length', 1)
 
 " =================
 "  vim-javascript
