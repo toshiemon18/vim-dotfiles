@@ -66,6 +66,7 @@ let g:user_emmet_settings = {
 " =================
 "  neocomplete/neosnippet
 " =================
+" --- NeoComplete
 " 起動時にneocompleteを有効化
 let g:neocomplete#enable_at_startup = 1
 " 大文字が入力されるまで大/小文字の区別を無視
@@ -81,8 +82,14 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#auto_completion_start_length = 2
 " preview windowを閉じない
 let g:neocomplete#enable_auto_close_preview = 0
+" 補完候補の一番先頭を選択状態にする(AutoComplPopと似た動作)
+let g:neocomplete#enable_auto_select = 1
 " AutoCmd InsertLeave * silent! pclose!
 let g:neocomplete#max_keyword_width = 10000
+
+let g:neocomplete#include_paths = {
+    \ 'ruby' : '.,$HOME/.rbenv/versions/2.3.3/lib/ruby',
+    \}
 
 if !exists('g:neocomplete#delimiter_patterns')
     let g:neocomplete#delimiter_patterns= {}
@@ -98,10 +105,6 @@ if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
 
-let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-let g:neocomplete#force_omni_input_patterns.typescript = '[^. \t]\.\%(\h\w*\)\?' " Same as JavaScript
-let g:neocomplete#force_omni_input_patterns.go = '[^. \t]\.\%(\h\w*\)\?'         " Same as JavaScript
-
 let s:neco_dicts_dir = $HOME . '/vim-dotfiles/dicts'
 if isdirectory(s:neco_dicts_dir)
     let g:neocomplete#sources#dictionary#dictionaries = {
@@ -111,13 +114,33 @@ if isdirectory(s:neco_dicts_dir)
 endif
 let g:neocomplete#data_directory = $HOME . '/.vim/cache/neocomplete'
 
-autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
-autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType ruby setl omnifunc=rubycomplete#Complete
+autocmd FileType css         setl omnifunc=csscomplete#CompleteCSS
+autocmd FileType html        setl omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript  setl omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python      setl omnifunc=pythoncomplete#Complete
+autocmd FileType ruby        setl omnifunc=rubycomplete#Complete
 
 call neocomplete#custom#source('look', 'min_pattern_length', 1)
+
+" インクルードバスの指定
+
+" --- NeoSnippet
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
 
 " =================
 "  vim-javascript

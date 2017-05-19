@@ -69,11 +69,10 @@ set guifontwide=Ricty\ 14
 "  エディタの見た目
 " =================
 set t_Co=256
-syntax on
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
-set background=dark
+syntax enable
+" https://github.com/crusoexia/vim-monokai
+colorscheme monokai
+" set background=dark
 set cmdheight=2
 set title " タイトル部分に開いてるファイルのフルパスを表示する
 set wildmenu " 自動補完でかっこ良くアレする
