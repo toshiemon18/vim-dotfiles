@@ -195,6 +195,12 @@ repo = 'hail2u/vim-css3-syntax'
 [[plugins]]
 repo = 'vim-scripts/Vim-R-plugin'
 
+# ================
+#   Python
+# ================
+# jedi-vim
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
 
 # =================
 #   Markdown

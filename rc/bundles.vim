@@ -88,9 +88,24 @@ let g:neocomplete#max_list = 100
 let g:neocomplete#enable_auto_close_preview = 0
 let g:neocomplete#max_keyword_width = 10000
 
+"インクルードパスの指定
 let g:neocomplete#include_paths = {
-    \ 'ruby' : '.,$HOME/.rbenv/versions/2.3.3/lib/ruby',
-    \}
+  \ 'ruby' : '.,$HOME/.rbenv/versions/**/lib/ruby/2.3.0/',
+  \ }
+"インクルード文のパターンを指定
+let g:neocomplete#include_patterns = {
+  \ 'cpp' : '^\s*#\s*include',
+  \ 'ruby' : '^\s*require',
+  \ 'perl' : '^\s*use',
+  \ }
+"インクルード先のファイル名の解析パターン
+let g:neocomplete#include_exprs = {
+  \ 'ruby' : substitute(v:fname,'::','/','g')
+  \ }
+" ファイルを探す際に、この値を末尾に追加したファイルも探す。
+let g:neocomplete#include_suffixes = {
+  \ 'ruby' : '.rb',
+  \ }
 
 if !exists('g:neocomplete#delimiter_patterns')
     let g:neocomplete#delimiter_patterns= {}
@@ -118,8 +133,8 @@ let g:neocomplete#data_directory = $HOME . '/.vim/cache/neocomplete'
 autocmd FileType css         setl omnifunc=csscomplete#CompleteCSS
 autocmd FileType html        setl omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript  setl omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python      setl omnifunc=pythoncomplete#Complete
-autocmd FileType ruby        setl omnifunc=rubycomplete#Complete
+" autocmd FileType python      setl omnifunc=pythoncomplete#Complete
+" autocmd FileType ruby        setl omnifunc=rubycomplete#Complete
 
 " call neocomplete#custom#source('look', 'min_pattern_length', 1)
 
@@ -141,7 +156,12 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/neosnippets'
 
+" =================
+"  jedi-vim
+" =================
 
 " =================
 "  vim-javascript

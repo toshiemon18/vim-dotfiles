@@ -5,7 +5,7 @@ endif
 " プラグインがインストールされるディレクトリを設定する
 let s:dein_dir = expand('~/.vim/dein')
 " dein.vimの本体があるディレクトリ
-let s:dein_repo_dir = s:dein_dir . '~/.vim/dein/repos/github.com/Shougo/dein.vim/'
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim/'
 
 " dein.vimが無い場合にはgithubから落としてくる
 if &runtimepath !~# 'dein.vim'
