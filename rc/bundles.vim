@@ -68,23 +68,24 @@ let g:user_emmet_settings = {
 " =================
 " --- NeoComplete
 " 起動時にneocompleteを有効化
-let g:neocomplete#enable_at_startup = 1
-" 大文字が入力されるまで大/小文字の区別を無視
+let g:neocomplete#disable_auto_complete = 0
+
 let g:neocomplete#enable_smart_case = 1
-" '_'区切りの保管を有効にする
-let g:neocomplete#enable_underbar_completion = 1
-let g:neocomplete#enable_camel_case_completion = 1
-" ポップアップ表示される候補件数 : 20
-let g:neocomplete#max_list = 20
-" シンタックスをキャッシュする際の文字列の最小の長さ : 3
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-" 保管を表示する際の文字列の最小の長さ
+let g:neocomplete#enable_underbar = 1
+let g:neocomplete#enable_camel_case = 1
+let g:neocomplete#auto_complete_delay = 30
+
+let g:neocomplete#enable_fuzzy_completion = 1
+
 let g:neocomplete#auto_completion_start_length = 2
-" preview windowを閉じない
-let g:neocomplete#enable_auto_close_preview = 0
-" 補完候補の一番先頭を選択状態にする(AutoComplPopと似た動作)
+let g:neocomplete#min_keyword_length = 3
+
 let g:neocomplete#enable_auto_select = 1
-" AutoCmd InsertLeave * silent! pclose!
+
+let g:neocomplete#enable_auto_delimiter = 1
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#max_list = 100
+let g:neocomplete#enable_auto_close_preview = 0
 let g:neocomplete#max_keyword_width = 10000
 
 let g:neocomplete#include_paths = {
@@ -120,7 +121,7 @@ autocmd FileType javascript  setl omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python      setl omnifunc=pythoncomplete#Complete
 autocmd FileType ruby        setl omnifunc=rubycomplete#Complete
 
-call neocomplete#custom#source('look', 'min_pattern_length', 1)
+" call neocomplete#custom#source('look', 'min_pattern_length', 1)
 
 " インクルードバスの指定
 
