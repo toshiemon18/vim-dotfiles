@@ -133,8 +133,6 @@ let g:neocomplete#data_directory = $HOME . '/.vim/cache/neocomplete'
 autocmd FileType css         setl omnifunc=csscomplete#CompleteCSS
 autocmd FileType html        setl omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript  setl omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python      setl omnifunc=pythoncomplete#Complete
-" autocmd FileType ruby        setl omnifunc=rubycomplete#Complete
 
 " call neocomplete#custom#source('look', 'min_pattern_length', 1)
 
