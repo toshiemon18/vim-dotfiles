@@ -64,7 +64,7 @@ let g:vim_markdown_folding_disabled=1
 " =================
 autocmd FileType python setl nocindent autoindent smartindent
 autocmd FileType python setl shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-
+autocmd FileType python setlocal completeopt-=preview
 " =================
 "    HTML/XML
 " =================
