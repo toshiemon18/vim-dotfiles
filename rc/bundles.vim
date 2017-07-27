@@ -25,11 +25,7 @@ nnoremap <Space>q :<C-u>bw! \[quickrun\ output\]<CR>
 " =================
 "   NERDTree
 " =================
-let NERDTreeDirArrows=1
-let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['\.o$', '\.pyc$', '\.php\~$']
-let NERDTreeWinSize = 35
-let NERDTreeChDirMode = 2
 let NERDTreeShowLineNumbers = 1
 let NERDTreeAutoCenter = 1
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
