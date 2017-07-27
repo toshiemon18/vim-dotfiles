@@ -22,11 +22,11 @@ if dein#load_state(s:dein_dir)
     " 予めdein_plugs.tomlを用意すること
     let g:rc_dir    = expand('~/vim-dotfiles/dein_files/')
     let s:toml      = g:rc_dir . 'dein_plugs.toml'
-    " let s:lazy_toml = g:rc_dir . 'dein_plugs_lazy.toml'
+    let s:lazy_toml = g:rc_dir . 'dein_plugs_lazy.toml'
 
     " TOMLファイルを読み込んでキャッシュしておく
     call dein#load_toml(s:toml,      {'lazy': 0})
-    " call dein#load_toml(s:lazy_toml, {'lazy': 1})
+    call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
     " 設定終了
     call dein#end()
