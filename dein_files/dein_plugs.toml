@@ -2,7 +2,7 @@
 # NeoBundleと同じっすね
 
 # =================
-#   vim関連
+#   システム周り
 # =================
 # dein.vim
 [[plugins]]
@@ -49,21 +49,6 @@ repo = 'tomtom/tcomment_vim'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-# スニペットを使う
-# neosnippet
-[[plugins]]
-repo = 'Shougo/neosnippet'
-# neosnippet-snippet
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-# 補完入力をサポート
-# neocomplete/neocomplcache
-# [[plugins]]
-# repo = 'Shougo/neocomplcache.vim'
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-
 # ステータスラインを良い感じするやつ
 # lightline.vim
 [[plugins]]
@@ -95,6 +80,70 @@ repo = 'osyo-manga/shabadou.vim'
 [[plugins]]
 repo = 'osyo-manga/shabadou.vim'
 
+
+# タブキーで連続して補完する
+# ervandew/supertab
+[[plugins]]
+repo = 'ervandew/supertab'
+
+# Vimからfzfを使うためのインターフェース
+# junegunn/fzf.vim
+# jungunn/fzf
+# https://github.com/junegunn/fzf.vim
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+[[plugins]]
+repo = 'junegunn/fzf'
+
+# 多機能な絞り込み検索
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+# Vimからtmux使うためのインターフェース
+[[plugins]]
+repo = 'benmills/vimux'
+
+# 非同期実行をサポート
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+# ======================
+# プログラミングサポート
+# ======================
+# スニペットを使う
+# スニペットによる補完
+# NeoSnippetやめようかな...
+# SirVer/ultisnips
+[[plugins]]
+repo = 'SirVer/ultisnips'
+
+# vim-snippets
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+# 補完入力をサポート
+# neocomplete.vim
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+# 開いたファイルの構造を表示してくれる
+# クラス, メソッド, フィールド等
+# 新規ファイルタイプの設定を追加する時は下記参照
+# https://github.com/majutsushi/tagbar/wiki
+# majutsushi/tagbar
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+# 閉じ系を自動で補完してよしなにしてくれる
+# Townk/vim-autoclose
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+# シンタックスチェッカー
+# vim-syntastic/syntastic
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+
 # =================
 #   HTML
 #   CSS
@@ -122,8 +171,24 @@ repo = 'hail2u/vim-css3-syntax'
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 
+# Vimで文書を書く
+# reedes/vim-pencil
+[[plugins]]
+repo = 'reedes/vim-pencil'
+
+# Git-Flavored-Markdownをサポートする
+[[plugins]]
+repo = 'jtratner/vim-flavored-markdown'
+
 [[plugins]]
 repo = 'kannokanno/previm'
+
+# =================[
+#   Git
+# =================
+# VimとGitを連携する
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 # =================
 #   Others

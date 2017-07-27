@@ -5,13 +5,13 @@
 # vim-endwise
 [[plugins]]
 repo = 'tpope/vim-endwise'
-on_ft = ['ruby']
+on_ft = ['ruby', 'elixir', 'eex']
 
 # Rubyのいろいろ
 # vim-ruby
 [[plugins]]
 repo = 'vim-ruby/vim-ruby'
-on_ft = ['ruby', 'slim'
+on_ft = ['ruby', 'slim']
 
 # railsのいろいろ
 # vim-rails
@@ -56,6 +56,11 @@ on_ft = ['javascript']
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
 on_ft = ['javascript', 'coffeescript']
+
+# JSのコードを整形してくれるやつ
+[[plugins]]
+rpeo = 'maksimr/vim-jsbeautify'
+on_ft = ['javascript']
 
 # ================
 #   Python
@@ -109,7 +114,32 @@ on_ft = ['elixir', 'eex']
 repo = 'mattreduce/vim-mix'
 on_ft = ['elixir', 'eex']
 
+# Elixirでもctagsを適用
+[[plugins]]
+repo = 'mmorearty/elixir-ctags'
+on_ft = ['elixir', 'eex']
+
 # slashmili/alchemist.vim
 [[plugins]]
 repo = 'slashmili/alchemist.vim'
 on_ft = ['elixir', 'eex']
+
+# =================
+#   Erlang
+# =================
+# ErlangのOmni補完をサポート
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-omnicomplete'
+on_ft = ['erlang']
+
+# Erlangのシンタックスをサポート
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-runtime'
+on_ft = ['erlang']
+
+# Erlangのコンパイルを行う
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-compiler'
+on_ft = ['erlang']
+
+
