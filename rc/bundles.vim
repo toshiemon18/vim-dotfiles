@@ -67,29 +67,27 @@ let g:user_emmet_settings = {
             \}
 
 " =================
-"  neocomplete/neosnippet
+"  NeoComplete
+"  NeoSnippet
+"  UltiSnips
 " =================
 " --- NeoComplete
 " 起動時にneocompleteを有効化
 let g:neocomplete#disable_auto_complete = 0
-
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_underbar = 1
-let g:neocomplete#enable_camel_case = 1
-let g:neocomplete#auto_complete_delay = 30
-
 let g:neocomplete#enable_fuzzy_completion = 1
-
-let g:neocomplete#auto_completion_start_length = 2
-let g:neocomplete#min_keyword_length = 3
-
-let g:neocomplete#enable_auto_select = 1
-
-let g:neocomplete#enable_auto_delimiter = 1
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#max_list = 100
-let g:neocomplete#enable_auto_close_preview = 0
-let g:neocomplete#max_keyword_width = 10000
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+let s:neco_dicts_dir = $HOME . '/vim-dotfiles/dicts'
+if isdirectory(s:neco_dicts_dir)
+    let g:neocomplete#sources#dictionary#dictionaries = {
+                \ 'default':    '',
+                \ 'ruby':       s:neco_dicts_dir . '/ruby.dict',
+                \ 'javascript': s:neco_dicts_dir . '/jquery.dict'
+                \ }
+endif
+let g:neocomplete#data_directory = $HOME . '/.vim/cache/neocomplete'
 
 "インクルードパスの指定
 let g:neocomplete#include_paths = {
@@ -97,9 +95,7 @@ let g:neocomplete#include_paths = {
   \ }
 "インクルード文のパターンを指定
 let g:neocomplete#include_patterns = {
-  \ 'cpp' : '^\s*#\s*include',
   \ 'ruby' : '^\s*require',
-  \ 'perl' : '^\s*use',
   \ }
 "インクルード先のファイル名の解析パターン
 let g:neocomplete#include_exprs = {
@@ -109,6 +105,11 @@ let g:neocomplete#include_exprs = {
 let g:neocomplete#include_suffixes = {
   \ 'ruby' : '.rb',
   \ }
+
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 if !exists('g:neocomplete#delimiter_patterns')
     let g:neocomplete#delimiter_patterns= {}
@@ -120,26 +121,19 @@ if !exists('g:neocomplete#same_filetypes')
 endif
 let g:neocomplete#same_filetypes.ruby = 'eruby'
 
+" Rubyの補完は"."等で始めてほしい"
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
-
-let s:neco_dicts_dir = $HOME . '/vim-dotfiles/dicts'
-if isdirectory(s:neco_dicts_dir)
-    let g:neocomplete#sources#dictionary#dictionaries = {
-    \   'ruby': s:neco_dicts_dir . '/ruby.dict',
-    \   'javascript': s:neco_dicts_dir . '/jquery.dict',
-    \ }
-endif
-let g:neocomplete#data_directory = $HOME . '/.vim/cache/neocomplete'
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 autocmd FileType css         setl omnifunc=csscomplete#CompleteCSS
 autocmd FileType html        setl omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript  setl omnifunc=javascriptcomplete#CompleteJS
-
-" call neocomplete#custom#source('look', 'min_pattern_length', 1)
-
-" インクルードバスの指定
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><C-h>     neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>      neocomplete#smart_close_popup()."\<C-h>"
 
 " --- NeoSnippet
 " Plugin key-mappings.
@@ -170,4 +164,60 @@ let g:neosnippet#snippets_directory='~/.vim/snippets/neosnippet-snippets/neosnip
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 
+" =================
+"  Elixir
+" =================
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'f:functions',
+        \ 'functions:functions',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 'r:records',
+        \ 't:tests'
+    \ ]
+    \ }
 
+" =================
+"   fzf
+" =================
+" Fzf Configuration
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~40%' }
+
+" In Neovim, you can set up fzf window using a Vim command
+let g:fzf_layout = { 'window': 'enew' }
+let g:fzf_layout = { 'window': '-tabnew' }
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
