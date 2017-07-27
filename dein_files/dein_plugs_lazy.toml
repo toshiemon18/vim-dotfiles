@@ -1,0 +1,115 @@
+# =================
+#   Ruby関連
+# =================
+# Rubyのendを保管する
+# vim-endwise
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_ft = ['ruby']
+
+# Rubyのいろいろ
+# vim-ruby
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = ['ruby', 'slim'
+
+# railsのいろいろ
+# vim-rails
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = ['ruby', 'slim']
+
+# rspec関係
+[[plugins]]
+repo = 'Keithbsmiley/rspec.vim'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'thoughtbot/vim-rspec'
+on_ft = ['ruby']
+
+# slimのなんやかんや
+# vim-slim
+[[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
+
+# =================
+#   JavaScript
+#   CoffeeScript
+# =================
+# mktakuyaのおすすめ
+# vim-javascript
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript', 'coffeescript']
+
+[[plugins]]
+repo = 'jelera/vim-javascript-syntax'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'moll/vim-node'
+on_ft = ['javascript']
+
+# CoffeeScriptを書くためのサムシング
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = ['javascript', 'coffeescript']
+
+# ================
+#   Python
+# ================
+# jedi-vim
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = ['python']
+# hook_add = '''
+#   let g:jedi#use_tabs_not_buffers = 1
+#   let g:jedi#popup_select_first = 0
+#   let g:jedi#popup_on_dot = 0
+#   let g:jedi#goto_command = "<leader>d"
+#   let g:jedi#goto_assignments_command = "<leader>g"
+#   let g:jedi#goto_definitions_command = ""
+#   let g:jedi#documentation_command = "K"
+#   let g:jedi#usages_command = "<leader>n"
+#   let g:jedi#rename_command = "<leader>R"
+#   autocmd FileType python setlocal completeopt-=preview
+# '''
+
+# =================
+#   R
+# =================
+# vim-R-Plugin
+# vimをR Studioっぽくするやつ
+[[plugins]]
+repo = 'vim-scripts/Vim-R-plugin'
+on_ft = ['R', 'r']
+
+# =================
+#   Elixir
+# =================
+# シンタックス、ハイライト等
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+on_ft = ['elixir', 'eex']
+
+# Phoenix対応
+[[plugins]]
+repo = 'avdgaag/vim-phoenix'
+on_ft = ['elixir', 'eex']
+
+# extest
+[[plugins]]
+repo = 'BjRo/vim-extest'
+on_ft = ['elixir', 'eex']
+
+# mattreduce/vim-mix
+[[plugins]]
+repo = 'mattreduce/vim-mix'
+on_ft = ['elixir', 'eex']
+
+# slashmili/alchemist.vim
+[[plugins]]
+repo = 'slashmili/alchemist.vim'
+on_ft = ['elixir', 'eex']

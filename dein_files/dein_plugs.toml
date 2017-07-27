@@ -96,79 +96,6 @@ repo = 'osyo-manga/shabadou.vim'
 repo = 'osyo-manga/shabadou.vim'
 
 # =================
-#   Ruby関連
-# =================
-# Rubyのendを保管する
-# vim-endwise
-[[plugins]]
-repo = 'tpope/vim-endwise'
-
-# Rubyのいろいろ
-# vim-ruby
-[[plugins]]
-repo = 'vim-ruby/vim-ruby'
-
-# railsのいろいろ
-# vim-rails
-[[plugins]]
-repo = 'tpope/vim-rails'
-
-# rspec関係
-[[plugins]]
-repo = 'Keithbsmiley/rspec.vim'
-
-[[plugins]]
-repo = 'thoughtbot/vim-rspec'
-
-# slimのなんやかんや
-# vim-slim
-[[plugins]]
-repo = 'slim-template/vim-slim'
-
-# =================
-#   Elixir
-# =================
-# シンタックス、ハイライト等
-[[plugins]]
-repo = 'elixir-lang/vim-elixir'
-
-# Phoenix対応
-[[plugins]]
-repo = 'avdgaag/vim-phoenix'
-
-# extest
-[[plugins]]
-repo = 'BjRo/vim-extest'
-
-# mattreduce/vim-mix
-[[plugins]]
-repo = 'mattreduce/vim-mix'
-
-# =================
-#   JavaScript
-#   CoffeeScript
-# =================
-# mktakuyaのおすすめ
-# vim-javascript
-[[plugins]]
-repo = 'pangloss/vim-javascript'
-
-[[plugins]]
-repo = 'jelera/vim-javascript-syntax'
-
-[[plugins]]
-repo = 'moll/vim-node'
-
-# JSXに対応する
-# vim-jsx
-# [[plugins]]
-# repo = 'mxw/vim-jsx'
-
-# CoffeeScriptを書くためのサムシング
-[[plugins]]
-repo = 'kchmck/vim-coffee-script'
-
-# =================
 #   HTML
 #   CSS
 # =================
@@ -186,33 +113,6 @@ repo = 'mattn/emmet-vim'
 # vim-css3-syntax
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
-
-# =================
-#   R
-# =================
-# vim-R-Plugin
-# vimをR Studioっぽくするやつ
-[[plugins]]
-repo = 'vim-scripts/Vim-R-plugin'
-
-# ================
-#   Python
-# ================
-# jedi-vim
-# [[plugins]]
-# repo = 'davidhalter/jedi-vim'
-# hook_add = '''
-#   let g:jedi#use_tabs_not_buffers = 1
-#   let g:jedi#popup_select_first = 0
-#   let g:jedi#popup_on_dot = 0
-#   let g:jedi#goto_command = "<leader>d"
-#   let g:jedi#goto_assignments_command = "<leader>g"
-#   let g:jedi#goto_definitions_command = ""
-#   let g:jedi#documentation_command = "K"
-#   let g:jedi#usages_command = "<leader>n"
-#   let g:jedi#rename_command = "<leader>R"
-#   autocmd FileType python setlocal completeopt-=preview
-# '''
 
 # =================
 #   Markdown
