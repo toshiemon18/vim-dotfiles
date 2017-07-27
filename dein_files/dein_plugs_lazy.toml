@@ -59,7 +59,7 @@ on_ft = ['javascript', 'coffeescript']
 
 # JSのコードを整形してくれるやつ
 [[plugins]]
-rpeo = 'maksimr/vim-jsbeautify'
+repo = 'maksimr/vim-jsbeautify'
 on_ft = ['javascript']
 
 # ================
@@ -137,9 +137,5 @@ on_ft = ['erlang']
 repo = 'vim-erlang/vim-erlang-runtime'
 on_ft = ['erlang']
 
-# Erlangのコンパイルを行う
-[[plugins]]
-repo = 'vim-erlang/vim-erlang-compiler'
-on_ft = ['erlang']
 
 

@@ -139,11 +139,6 @@ repo = 'majutsushi/tagbar'
 [[plugins]]
 repo = 'Townk/vim-autoclose'
 
-# シンタックスチェッカー
-# vim-syntastic/syntastic
-[[plugins]]
-repo = 'vim-syntastic/syntastic'
-
 # =================
 #   HTML
 #   CSS
@@ -180,9 +175,6 @@ repo = 'reedes/vim-pencil'
 [[plugins]]
 repo = 'jtratner/vim-flavored-markdown'
 
-[[plugins]]
-repo = 'kannokanno/previm'
-
 # =================[
 #   Git
 # =================
@@ -193,11 +185,6 @@ repo = 'tpope/vim-fugitive'
 # =================
 #   Others
 # =================
-# ブラウザで開く
-# open-browser.vim
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-
 # TOML対応
 # toml.vim
 [[plugins]]
