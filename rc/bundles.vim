@@ -67,29 +67,27 @@ let g:user_emmet_settings = {
             \}
 
 " =================
-"  neocomplete/neosnippet
+"  NeoComplete
+"  NeoSnippet
+"  UltiSnips
 " =================
 " --- NeoComplete
 " 起動時にneocompleteを有効化
 let g:neocomplete#disable_auto_complete = 0
-
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_underbar = 1
-let g:neocomplete#enable_camel_case = 1
-let g:neocomplete#auto_complete_delay = 30
-
 let g:neocomplete#enable_fuzzy_completion = 1
-
-let g:neocomplete#auto_completion_start_length = 2
-let g:neocomplete#min_keyword_length = 3
-
-let g:neocomplete#enable_auto_select = 1
-
-let g:neocomplete#enable_auto_delimiter = 1
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#max_list = 100
-let g:neocomplete#enable_auto_close_preview = 0
-let g:neocomplete#max_keyword_width = 10000
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+let s:neco_dicts_dir = $HOME . '/vim-dotfiles/dicts'
+if isdirectory(s:neco_dicts_dir)
+    let g:neocomplete#sources#dictionary#dictionaries = {
+                \ 'default':    '',
+                \ 'ruby':       s:neco_dicts_dir . '/ruby.dict',
+                \ 'javascript': s:neco_dicts_dir . '/jquery.dict'
+                \ }
+endif
+let g:neocomplete#data_directory = $HOME . '/.vim/cache/neocomplete'
 
 "インクルードパスの指定
 let g:neocomplete#include_paths = {
@@ -97,9 +95,7 @@ let g:neocomplete#include_paths = {
   \ }
 "インクルード文のパターンを指定
 let g:neocomplete#include_patterns = {
-  \ 'cpp' : '^\s*#\s*include',
   \ 'ruby' : '^\s*require',
-  \ 'perl' : '^\s*use',
   \ }
 "インクルード先のファイル名の解析パターン
 let g:neocomplete#include_exprs = {
@@ -109,6 +105,11 @@ let g:neocomplete#include_exprs = {
 let g:neocomplete#include_suffixes = {
   \ 'ruby' : '.rb',
   \ }
+
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 if !exists('g:neocomplete#delimiter_patterns')
     let g:neocomplete#delimiter_patterns= {}
@@ -120,26 +121,19 @@ if !exists('g:neocomplete#same_filetypes')
 endif
 let g:neocomplete#same_filetypes.ruby = 'eruby'
 
+" Rubyの補完は"."等で始めてほしい"
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
-
-let s:neco_dicts_dir = $HOME . '/vim-dotfiles/dicts'
-if isdirectory(s:neco_dicts_dir)
-    let g:neocomplete#sources#dictionary#dictionaries = {
-    \   'ruby': s:neco_dicts_dir . '/ruby.dict',
-    \   'javascript': s:neco_dicts_dir . '/jquery.dict',
-    \ }
-endif
-let g:neocomplete#data_directory = $HOME . '/.vim/cache/neocomplete'
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 autocmd FileType css         setl omnifunc=csscomplete#CompleteCSS
 autocmd FileType html        setl omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript  setl omnifunc=javascriptcomplete#CompleteJS
-
-" call neocomplete#custom#source('look', 'min_pattern_length', 1)
-
-" インクルードバスの指定
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><C-h>     neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>      neocomplete#smart_close_popup()."\<C-h>"
 
 " --- NeoSnippet
 " Plugin key-mappings.
@@ -150,15 +144,15 @@ xmap <C-x> <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-x> <Plug>(neosnippet_expand_or_jump)
-imap <expr><TAB>
-\ pumvisible() ? "\<C-n>" :
-\ neosnippet#expandable_or_jumpable() ?
-\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.vim/snippets/neosnippet-snippets/neosnippets/'
+"imap <C-x> <Plug>(neosnippet_expand_or_jump)
+"imap <expr><TAB>
+"\ pumvisible() ? "\<C-n>" :
+"\ neosnippet#expandable_or_jumpable() ?
+"\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"let g:neosnippet#enable_snipmate_compatibility = 1
+"let g:neosnippet#snippets_directory='~/.vim/snippets/neosnippet-snippets/neosnippets/'
 
 " =================
 "  jedi-vim
@@ -170,4 +164,78 @@ let g:neosnippet#snippets_directory='~/.vim/snippets/neosnippet-snippets/neosnip
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 
+" =================
+"  Elixir
+" =================
 
+" ================
+"  tagbar
+" ================
+" CoffeeScript
+let g:tagbar_type_coffee = {
+    \ 'ctagstype': 'coffee',
+    \ 'kinds': [
+        \ 'c:classes',
+        \ 'm:methods',
+        \ 'functions',
+        \ 'v:variables',
+        \ 'f:fields'
+    \ ]
+    \}
+
+" Elixir
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'f:functions',
+        \ 'functions:functions',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 'r:records',
+        \ 't:tests'
+    \ ]
+    \ }
+
+" CSS
+let g:tagbar_type_css = {
+\ 'ctagstype' : 'Css',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 's:selectors',
+        \ 'i:identities'
+    \ ]
+\ }
+
+" Markdown
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'ctagsbin' : '~/markdown2ctags/markdown2ctags.py',
+    \ 'ctagargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }

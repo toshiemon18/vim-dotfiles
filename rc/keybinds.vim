@@ -56,13 +56,6 @@ map <Leader>a :call RunAllSpecs()<CR>
 " =================
 "   system
 " =================
-" タブ移動
-map <C-l> gt
-map <C-h> gT
-" 新規タブを開く
-map <C-t> :tabnew<CR>
-" 現在の状態を保存
-inoremap <C-S> :w<CR>
 " Ecs連打で検索結果のハイライトを消す
 nnoremap <ESC><ESC> :nohlsearch<CR>
 " 新規バッファを開く
