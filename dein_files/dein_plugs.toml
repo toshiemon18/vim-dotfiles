@@ -72,40 +72,13 @@ repo = 'thinca/vim-ref'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
-# vim-watchdog
-[[plugins]]
-repo = 'osyo-manga/shabadou.vim'
-
 # shabadou.vim
 [[plugins]]
 repo = 'osyo-manga/shabadou.vim'
 
-
-# タブキーで連続して補完する
-# ervandew/supertab
-[[plugins]]
-repo = 'ervandew/supertab'
-
-# Vimからfzfを使うためのインターフェース
-# junegunn/fzf.vim
-# jungunn/fzf
-# https://github.com/junegunn/fzf.vim
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-[[plugins]]
-repo = 'junegunn/fzf'
-
 # 多機能な絞り込み検索
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
-
-# Vimからtmux使うためのインターフェース
-[[plugins]]
-repo = 'benmills/vimux'
-
-# 非同期実行をサポート
-[[plugins]]
-repo = 'tpope/vim-dispatch'
 
 # ======================
 # プログラミングサポート
@@ -136,44 +109,8 @@ repo = 'majutsushi/tagbar'
 
 # 閉じ系を自動で補完してよしなにしてくれる
 # Townk/vim-autoclose
-[[plugins]]
-repo = 'Townk/vim-autoclose'
-
-# =================
-#   HTML
-#   CSS
-# =================
-# HTML5のシンタックスに対応
-# html5.vim
-[[plugins]]
-repo = 'othree/html5.vim'
-
-# 閉じタグを良い感じにアレするやつ
-# emmet-vim
-[[plugins]]
-repo = 'mattn/emmet-vim'
-
-# CSS3のシンタックスに対応
-# vim-css3-syntax
-[[plugins]]
-repo = 'hail2u/vim-css3-syntax'
-
-# =================
-#   Markdown
-# =================
-# Markdownのためのプラグイン
-# vim-markdown
-[[plugins]]
-repo = 'plasticboy/vim-markdown'
-
-# Vimで文書を書く
-# reedes/vim-pencil
-[[plugins]]
-repo = 'reedes/vim-pencil'
-
-# Git-Flavored-Markdownをサポートする
-[[plugins]]
-repo = 'jtratner/vim-flavored-markdown'
+#[[plugins]]
+#repo = 'Townk/vim-autoclose'
 
 # =================[
 #   Git
