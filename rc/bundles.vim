@@ -144,15 +144,15 @@ xmap <C-x> <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-x> <Plug>(neosnippet_expand_or_jump)
-imap <expr><TAB>
-\ pumvisible() ? "\<C-n>" :
-\ neosnippet#expandable_or_jumpable() ?
-\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.vim/snippets/neosnippet-snippets/neosnippets/'
+"imap <C-x> <Plug>(neosnippet_expand_or_jump)
+"imap <expr><TAB>
+"\ pumvisible() ? "\<C-n>" :
+"\ neosnippet#expandable_or_jumpable() ?
+"\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"let g:neosnippet#enable_snipmate_compatibility = 1
+"let g:neosnippet#snippets_directory='~/.vim/snippets/neosnippet-snippets/neosnippets/'
 
 " =================
 "  jedi-vim
@@ -167,6 +167,23 @@ let g:javascript_plugin_ngdoc = 1
 " =================
 "  Elixir
 " =================
+
+" ================
+"  tagbar
+" ================
+" CoffeeScript
+let g:tagbar_type_coffee = {
+    \ 'ctagstype': 'coffee',
+    \ 'kinds': [
+        \ 'c:classes',
+        \ 'm:methods',
+        \ 'functions',
+        \ 'v:variables',
+        \ 'f:fields'
+    \ ]
+    \}
+
+" Elixir
 let g:tagbar_type_elixir = {
     \ 'ctagstype' : 'elixir',
     \ 'kinds' : [
@@ -185,39 +202,40 @@ let g:tagbar_type_elixir = {
     \ ]
     \ }
 
-" =================
-"   fzf
-" =================
-" Fzf Configuration
-" This is the default extra key bindings
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+" CSS
+let g:tagbar_type_css = {
+\ 'ctagstype' : 'Css',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 's:selectors',
+        \ 'i:identities'
+    \ ]
+\ }
 
-" Default fzf layout
-" - down / up / left / right
-let g:fzf_layout = { 'down': '~40%' }
+" Markdown
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'ctagsbin' : '~/markdown2ctags/markdown2ctags.py',
+    \ 'ctagargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
 
-" In Neovim, you can set up fzf window using a Vim command
-let g:fzf_layout = { 'window': 'enew' }
-let g:fzf_layout = { 'window': '-tabnew' }
-
-" Customize fzf colors to match your color scheme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }

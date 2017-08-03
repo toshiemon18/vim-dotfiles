@@ -72,40 +72,13 @@ repo = 'thinca/vim-ref'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
-# vim-watchdog
-[[plugins]]
-repo = 'osyo-manga/shabadou.vim'
-
 # shabadou.vim
 [[plugins]]
 repo = 'osyo-manga/shabadou.vim'
 
-
-# タブキーで連続して補完する
-# ervandew/supertab
-[[plugins]]
-repo = 'ervandew/supertab'
-
-# Vimからfzfを使うためのインターフェース
-# junegunn/fzf.vim
-# jungunn/fzf
-# https://github.com/junegunn/fzf.vim
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-[[plugins]]
-repo = 'junegunn/fzf'
-
 # 多機能な絞り込み検索
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
-
-# Vimからtmux使うためのインターフェース
-[[plugins]]
-repo = 'benmills/vimux'
-
-# 非同期実行をサポート
-[[plugins]]
-repo = 'tpope/vim-dispatch'
 
 # ======================
 # プログラミングサポート
@@ -136,6 +109,7 @@ repo = 'majutsushi/tagbar'
 
 # 閉じ系を自動で補完してよしなにしてくれる
 # Townk/vim-autoclose
+<<<<<<< HEAD
 # [[plugins]]
 # repo = 'Townk/vim-autoclose'
 
