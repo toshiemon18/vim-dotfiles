@@ -136,8 +136,8 @@ repo = 'majutsushi/tagbar'
 
 # 閉じ系を自動で補完してよしなにしてくれる
 # Townk/vim-autoclose
-[[plugins]]
-repo = 'Townk/vim-autoclose'
+# [[plugins]]
+# repo = 'Townk/vim-autoclose'
 
 # =================
 #   HTML
